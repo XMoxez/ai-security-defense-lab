@@ -1,3 +1,6 @@
 .env
 __pycache__/ echo *.pyc
 git.env
+.env
+__pycache__/
+*.pyc

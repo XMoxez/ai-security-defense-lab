@@ -170,18 +170,18 @@ def render_level1(user, supabase_client):
     with tab1:
         st.code(
             '# config.py\n# MedVitals AI — Production Environment Configuration\n# Maintained by: engineering-team@medvitals.ai\n# Last updated: 2026-05-14\n\n'
-            'import os\nfrom dotenv import load_dotenv\n\n'
+            'import os\nfrom dotenv import load_dotenv\n\nload_dotenv()\n\n'
             'APP_ENV = "production"\nAPP_NAME = "medvitals-ai"\nAPP_PORT = 8080\nLOG_LEVEL = "INFO"\n\n'
-            'AWS_SECRET_ACCESS_KEY = so.environ.get("AWS_SECRET_ACESS_KEY")\n'
-            'AWS_REGION = so.environ.get("AWS_REGION", "us-east-1")\n'
-            'AWS_ACCOUNT_ID = so.environ.get("AWS_ACCOUNT_ID")\n\n'
-            'DB_HOST = os.environ.get("DB_HOST")\n
-            'DB_PORT = int(so.environ.get("DB_PORT",5432))\n'
+            'AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")\n'
+            'AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")\n'
+            'AWS_ACCOUNT_ID = os.environ.get("AWS_ACCOUNT_ID")\n\n'
+            'DB_HOST = os.environ.get("DB_HOST")\n'
+            'DB_PORT = int(os.environ.get("DB_PORT", 5432))\n'
             'DB_NAME = os.environ.get("DB_NAME")\n'
             'DB_USER = os.environ.get("DB_USER")\n'
-            'DB_PASSWORD = os.environ.get("DB_PASSWORD")\n\n
+            'DB_PASSWORD = os.environ.get("DB_PASSWORD")\n\n'
             'LLM_ENDPOINT = os.environ.get("LLM_ENDPOINT")\n'
-            'LLM_MODEL = os.environ.get("LLM_MODEL")\n
+            'LLM_MODEL = os.environ.get("LLM_MODEL", "gpt-4o")\n'
             'LLM_TIMEOUT = int(os.environ.get("LLM_TIMEOUT", 30))\n\n'
             'SESSION_SECRET = os.environ.get("SESSION_SECRET")',
             )
@@ -262,3 +262,75 @@ def render_level1(user, supabase_client):
                 st.rerun()
             except Exception as e:
                 st.error(f"Could not save progress: {e}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
