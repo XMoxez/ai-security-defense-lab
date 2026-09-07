@@ -54,13 +54,13 @@ Fill in each section as you complete a level. Link directly to your commit diff 
 ## Level 3 — CartBot AI · Application & API Security
 
 **Problem:**
-
+CartBot AI’s customer-facing API trusted a client-supplied customer_id header with no cryptographic verification
 **Method:**
-
+Audited api_config.py and identified TRUST_CUSTOMER_ID_HEADER = True, REQUIRE_JWT_VALIDATION = False, and RATE_LIMIT_ENABLED = False. Queried the CartBot AI assistant
 **Evidence:** [Link to commit]
-
+https://github.com/XMoxez/ai-security-defense-lab
 **Outcome:**
-
+The API can no longer be BOLA’d via header spoofing — any mismatched or missing JWT
 **Skills:** AI API Hardening · Rate Limiting · Output Filtering · OWASP LLM Top 10 · Direct Prompt Injection Defence
 
 **Others:**
