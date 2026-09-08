@@ -181,24 +181,7 @@ def render_level3(user, supabase_client):
 ' # ... proceed to fetch orders only after both checks pass\n'
 ' return {"status": "authorized", "customer_id": customer_id}\n',
 language="python",
-)config_hardened.py\n' +
-            '# CartBot AI — E-Commerce Platform\n' +
-            '# SECURITY PATCH — Patched by: [Your Name] — [Date]\n' +
-            '#\n' +
-            '# This is your workspace. Replace this with your hardened configuration.\n' +
-            '# Requirements:\n' +
-            '#   1. Set REQUIRE_JWT_VALIDATION = True\n' +
-            '#   2. Set JWT_SECRET via os.environ.get() — never hardcode\n' +
-            '#   3. Set TRUST_CUSTOMER_ID_HEADER = False\n' +
-            '#   4. Enable RATE_LIMIT_ENABLED = True\n' +
-            '#   5. Restrict SYSTEM_PROMPT — remove "retrieve whatever data" directive\n' +
-            '#\n' +
-            '# After your changes:\n' +
-            '#   Change SECURITY_STATUS = "PATCHED" at the top of this file\n' +
-            '#   Run: python3 tests/test_cartbot_api.py\n' +
-            '#   Screenshot the PASS output as evidence\n',
-            language="python",
-        )
+)
 
     st.markdown("---")
 
@@ -369,7 +352,7 @@ language="python",
         "3. **Demonstrated BOLA** by accessing another customer's orders.\n"
         "4. **Ran the Bulk Harvest simulation** and screenshotted the exfiltration-scale result.\n"
         "5. **Run the test script before and after** your patch with screenshots.\n"
-        "6. **Implemented JWT validation** and written your API Security Findings Report."
+        "6. **Implemented JWT validation** and written your API Security Findings Report.\n"
     )
 
     commit_url = st.text_input("GitHub commit URL showing your api_config_hardened.py patch:", placeholder="https://github.com/your-username/ai-security-defense-lab/commit/abc123", key="l3_commit_url")
