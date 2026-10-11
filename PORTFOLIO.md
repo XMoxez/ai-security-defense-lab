@@ -1,10 +1,10 @@
 # AI Defense Lab — Portfolio
 
-**Student:** [Your Full Name]
+**Student:** [Abati Moses]
 
-**GitHub:** [Your GitHub profile URL]
+**GitHub:** [XMoxez]
 
-**Hugging Face Space:** [Your HF Space URL]
+**Hugging Face Space:** [[Your HF Space URL](https://huggingface.co/settings/account)]
 
 **Completed:** [Date]
 
@@ -71,15 +71,15 @@ The API can no longer be BOLA’d via header spoofing — any mismatched or miss
 
 ## Level 4 — PayGuard · Data Security in AI
 
-**Problem:**
+**Problem:** PayGuard’s RAG-powered AI advisory assistant retrieved documents from a shared vector database with no per-tenant access enforcement — a client-supplied tenant_id to gain access but needs verification.
 
-**Method:**
+**Method:** Audited rag_config.py and identified TRUST_CLIENT_TENANT_ID = True and METADATA_FILTER_ENFORCED = False. Triggered cross-tenant retrieval by spoofing the tenant_id field, then trigger cross-tenant trivial. 
 
-**Evidence:** [Link to commit]
+**Evidence:** [Link to commit]https://glowing-xylophone-6vvqj976w574hqxx.github.dev/
 
-**Outcome:**
+**Outcome:** Cross-tenant retrieval is no longer possible at the application layer or the database layer — even a future code change that forgets to check tenant_id cannot bypass the platform.
 
-**Skills:** STRIDE Threat Modeling · RAG Pipeline Security · Multi-Tenant Data Isolation · Indirect Prompt Injection Defence
+**Skills:** STRIDE Threat Modeling · RAG Pipeline Security · Multi-Tenant Data Isolation · Indirect Prompt Injection Defence. RAG security · Vector database access control · OWASP LLM Top 10 (LLM09, LLM05) · STRIDE threat modeling · Airflow pipeline security · Database-level authorization design · Semgrep static analysis.
 
 **Others:**
 - [Technical write-up link]
