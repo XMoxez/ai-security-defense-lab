@@ -49,9 +49,10 @@ An attacker who compromised credentials associated with the policy could potenti
 **Method:** [How did you find it and what did you do to fix it?]
 I found the vulnerability by reviewing the AWS IAM policy and identifying mismatches between the permitted actions and resource ARNs. I worked on correcting the resource scopes by separating S3 bucket-level and object-level permissions and ensuring RDS connection permissions were properly scoped, following the principle of least privilege.
 
-**Evidence:** [Link to your GitHub commit diff showing the patch]
+**Evidence:**
+https://github.com/XMoxez/ai-security-defense-lab/commit/7b008788c864946c7cbfe7ade1baf3fb07394da3
 
-**Outcome:** [What changed as a result? What is more secure now and why does it matter to the business?]
+**Outcome:**
 The IAM policy was refined to better restrict access to the required S3 and RDS resources, reducing the risk of unauthorized access to sensitive patient data. This strengthens cloud security by limiting the potential damage from compromised credentials. For the business, it helps protect patient confidentiality, reduce the risk of data breaches, support regulatory compliance, and maintain patient trust.
 
 **Skills:** CloudTrail Log Forensics · IAM Least Privilege · Secrets Management · Incident Timeline Reporting
@@ -115,7 +116,7 @@ The problem I was solving was the risk of malicious or tampered machine learning
 **Method:**
 I approached the DataForge ML challenge by examining how machine learning models were sourced, stored, and loaded into the application. I focused on identifying risks associated with untrusted model files, unsafe deserialization, and model tampering. I investigated safer alternatives, including using the Safetensors format, verifying model integrity with cryptographic hashes, validating trusted model sources, and restricting unsafe loading operations. My approach was to identify potential attack paths, apply appropriate security controls, and verify that the controls reduced the risk of malicious code execution and unauthorized model modification.
 
-**Evidence:** [Link to commit]
+**Evidence:** https://github.com/XMoxez/ai-security-defense-lab/commit/16650b78b485ff3c3ee115e91ea689f9edc266b8
 
 **Outcome:**
 The assessment improved my understanding of how malicious or tampered model files can threaten an AI system. By focusing on trusted model sources, model integrity verification, and safer model-loading practices, I identified controls that can reduce the risk of code execution, data exposure, and ML pipeline compromise. The key outcome was recognizing that AI models must be treated as potential security risks until their origin and integrity are verified. This strengthens the security of the machine learning pipeline and helps protect sensitive data, application availability, and business operations.
@@ -156,8 +157,8 @@ CartBot AI’s customer-facing API trusted a client-supplied customer_id header 
 The Method: What Did I Change or Build?
 I examined how CartBot AI handles API requests, authenticates users, and authorizes access to shopping carts and customer records. I focused on identifying weaknesses in object-level authorization and input validation. I worked on strengthening server-side access controls so that each authenticated user could access only the resources they were authorized to use. I also considered how to validate incoming requests, restrict unauthorized operations, and ensure that security checks were enforced beyond the application interface.
 
-**Evidence:** [Link to commit]
-https://github.com/XMoxez/ai-security-defense-lab
+**Evidence:**
+https://github.com/XMoxez/ai-security-defense-lab/commit/6f84dc75c7f5ad85c41f89d9af044cb4c1a42aea
 
 **Outcome:**
 The assessment helped establish a stronger approach to protecting customer data and shopping transactions. By focusing on server-side authorization and API request validation, I learned how to reduce the risk of unauthorized cart access, customer data exposure, and transaction manipulation. The key lesson was that hiding information in the user interface is not enough; the server must independently verify every sensitive request. This is important for businesses because effective application and API security protects customer trust, data confidentiality, and the integrity of online transactions.
@@ -195,7 +196,7 @@ The journey wouldn't have been possible, without the guide of my instructor Dami
 
 **Method:** Audited rag_config.py and identified TRUST_CLIENT_TENANT_ID = True and METADATA_FILTER_ENFORCED = False. Triggered cross-tenant retrieval by spoofing the tenant_id field, then trigger cross-tenant trivial. 
 
-**Evidence:** [Link to commit]https://glowing-xylophone-6vvqj976w574hqxx.github.dev/
+**Evidence:** https://github.com/XMoxez/ai-security-defense-lab/commit/2e18b375d8febd07fbf5bc9562992a02893bc135
 
 **Outcome:** Cross-tenant retrieval is no longer possible at the application layer or the database layer — even a future code change that forgets to check tenant_id cannot bypass the platform.
 
@@ -237,7 +238,7 @@ LegalBot had architectural weaknesses that could allow an AI agent to perform se
 **Method:**
 I reviewed the LegalBot configuration and implemented security improvements by removing unnecessary standing authority, treating citizen input as untrusted data, introducing human approval for sensitive actions, and enabling audit logging. I then tested the updated system to verify that sensitive actions could not execute directly without approval. Finally, I mapped the security controls to the MAESTRO framework and the NIST AI Risk Management Framework (AI RMF).
 
-**Evidence:** [Link to commit]
+**Evidence:** https://github.com/XMoxez/ai-security-defense-lab/commit/72f6b101638ea6253709aad21b43f371569e5623
 
 **Outcome:**
 The remediation established stronger authorization boundaries, added human oversight for sensitive actions, and improved accountability through audit logging. Verification focused on demonstrating that restricted actions were blocked pending approval. The MAESTRO and NIST AI RMF mappings connected the technical improvements to broader AI risk management practices.
