@@ -2,11 +2,11 @@
 
 **Student:** [Abati Moses]
 
-**GitHub:** [XMoxez](https://github.com/XMoxez) 
+**GitHub:** [[XMoxez](https://github.com/XMoxez)] 
 
 **Hugging Face Space:** [[Your HF Space URL](https://huggingface.co/settings/account)]
 
-**Completed:** [Date]
+**Completed:** [21st Oct. 2026]
 
 ---
 
