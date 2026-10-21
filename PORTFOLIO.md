@@ -2,7 +2,7 @@
 
 **Student:** [Abati Moses]
 
-**GitHub:** [[XMoxez](https://github.com/XMoxez) ]
+**GitHub:** [XMoxez](https://github.com/XMoxez) 
 
 **Hugging Face Space:** [[Your HF Space URL](https://huggingface.co/settings/account)]
 
@@ -203,22 +203,66 @@ The journey wouldn't have been possible, without the guide of my instructor Dami
 
 **Others:**
 - [Technical write-up link]
+- Two vulnerabilities. One root cause. What happens when the same security mistake appears at two different layers of the same system?
+
+The Level 4 of AI Security Defense Lab fulfilled, during this process, I assessed a simulated multi-tenant RAG system and discovered a critical weakness: tenant isolation depended too heavily on application-level checks.
+
+By changing a client-supplied "tenant_id", I demonstrated cross-tenant retrieval because the vector store did not enforce tenant filtering.
+
+And seriously, that was a part of the investigation.
+I also examined embedding inversion, fine-tuning data poisoning, model backdoors, query abuse, and security gaps in an Airflow fine-tuning pipeline.
+
+My takeaway was - Different vulnerabilities can share the same root cause: trusting one layer to enforce a security boundary that should be protected across the system.
+
+When application code fails to validate access and the database or vector store does not independently enforce tenant isolation, sensitive information becomes exposed.
+
+My remediation focused on strengthening isolation at the database/vector-store layer, ensuring unauthorized access is blocked even if application-level checks fail.
+I documented my findings using STRIDE, OWASP LLM Top 10 (LLM09/LLM05), and Semgrep.
+
+The lesson: Security is not just about fixing individual vulnerabilities. It is about identifying the underlying design weakness and building defenses that remain effective when another layer fails. Damilola Aibinuola HerNetIQ 
+
+As AI systems become more complex, defense in depth must be a design principle, not an afterthought.
+#AISecurity #Cybersecurity #RAGSecurity #BuildInPublic
+
 - [LinkedIn post link]
+- https://lnkd.in/p/evehNqrP
 
 ---
 
 ## Level 5 — LegalBot Municipal · Agentic AI Security
 
 **Problem:**
+LegalBot had architectural weaknesses that could allow an AI agent to perform sensitive actions without sufficient restrictions or human approval. Standing authority increased the risk of unauthorized actions, while untrusted citizen input could potentially manipulate the agent. Without proper audit logging, investigating agent activities would also be difficult.
 
 **Method:**
+I reviewed the LegalBot configuration and implemented security improvements by removing unnecessary standing authority, treating citizen input as untrusted data, introducing human approval for sensitive actions, and enabling audit logging. I then tested the updated system to verify that sensitive actions could not execute directly without approval. Finally, I mapped the security controls to the MAESTRO framework and the NIST AI Risk Management Framework (AI RMF).
 
 **Evidence:** [Link to commit]
 
 **Outcome:**
+The remediation established stronger authorization boundaries, added human oversight for sensitive actions, and improved accountability through audit logging. Verification focused on demonstrating that restricted actions were blocked pending approval. The MAESTRO and NIST AI RMF mappings connected the technical improvements to broader AI risk management practices.
 
 **Skills:** Excessive Agency Mitigation · Llama Guard Integration · Pydantic Schema Enforcement · Autonomous Agent Containment
 
 **Others:**
 - [Technical write-up link]
+- ✅AI Defense Lab Level 5 Completed: LegalBot AI Security Remediation
+
+Another milestone in my AI Security journey!
+In Level 5 of the HerNetIq AI Security Fellowship, I worked on strengthening LegalBot by addressing architectural weaknesses and implementing meaningful security controls.
+
+My focus was on:
+🔐 Removing unnecessary standing authority.
+🛡️ Treating citizen input as untrusted data.
+👤 Introducing human approval for sensitive actions.
+📝 Implementing audit logging for agent activities.
+🧪 Verifying that sensitive actions could not execute directly without proper approval.
+I also mapped the remediation to the MAESTRO framework and the NIST AI Risk Management Framework (AI RMF), connecting technical fixes to broader AI risk management practices.
+
+My biggest takeaway: Securing an AI agent is not just about what it can do, but also about what it is allowed to do, when it can act, and who must approve its actions.
+On this challenge, my tutors where Damilola Aibinuola & Faith Ashiedu ! 🚀
+
+#AISecurity #Cybersecurity #AgenticAI #NIST #MAESTRO #BuildInPublic
+
 - [LinkedIn post link]
+- https://lnkd.in/p/eADZ3qFg
