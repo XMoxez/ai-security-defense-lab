@@ -163,3 +163,73 @@ AI Defense Lab Repository: [Insert repository link]
 Portfolio File: [Insert direct PORTFOLIO.md link]
 
 Combined Levels 1–3 LinkedIn Case Study: [Insert published LinkedIn post link]
+
+https://lnkd.in/p/eADZ3qFg
+Level 4 — PayGuard · Data Security in AI
+Problem:
+
+PayGuard's RAG system had weaknesses around tenant isolation, vector-store access, embedding exposure, fine-tuning data integrity, and query control. The RAG layer trusted the client-supplied tenant_id, the vector store used a shared index without enforced tenant filtering, the fine-tuning pipeline accepted training data without integrity validation, and retrieval had no effective rate limit.
+
+I also assessed the security impact of embedding inversion and the fine-tuning backdoor demonstrated in the lab. These weaknesses created a path to cross-tenant data exposure, poisoned model behaviour, and increased inference/resource costs.
+
+Method:
+
+I inspected the PayGuard RAG configuration and embedding model source, triggered cross-tenant retrieval by spoofing the tenant_id field, ran the scale demonstration, and simulated embedding inversion on a leaked record.
+
+I then inspected the Airflow fine-tuning pipeline, triggered the poisoned model behaviour, ran Semgrep against the PayGuard fixtures, and documented the findings using the STRIDE threat model.
+
+For remediation, I moved tenant enforcement to the database/vector-store layer, strengthened fine-tuning data validation, protected the retrieval boundary, and verified the security changes against the Level 4 requirements.
+
+Evidence:
+
+Level 4 remediation commit: https://github.com/Ikankeabasi/ai-security-defense-lab/commit/f141340cb548ab9d1d21ce2b536094d84fa5366a
+Level 4 STRIDE findings: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-11/week-11-level-4-data-security-findings.md
+Level 4 lab: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/levels/level4_payguard.py
+Outcome:
+
+Cross-tenant retrieval is no longer possible at the application layer or the database layer — even a future code change that forgets to check tenant_id cannot bypass the database-level tenant boundary.
+
+The remediation also strengthens fine-tuning data validation and the retrieval security controls, reducing the risk of tenant-data exposure, poisoned model behaviour, and uncontrolled query abuse.
+
+Skills:
+
+RAG Security · Vector Database Access Control · OWASP LLM Top 10 (LLM09, LLM05) · STRIDE Threat Modeling · Airflow Pipeline Security · Database-Level Authorization Design · Semgrep Static Analysis.
+
+Others:
+
+Level 4 Technical Report link: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-11/week-11-level-4-data-security-report.md
+LinkedIn post link: https://lnkd.in/p/dQsXSjmJ
+Level 5 — LegalBot Municipal · Agentic AI Security
+Problem:
+
+LegalBot Municipal, a simulated municipal AI legal assistant, could be redirected by a malicious instruction hidden in a citizen's case comment. The vulnerable setup gave the agent standing permission to finalize dismissals, did not require human approval, did not separate citizen input from instructions, and did not enable agent-action logging. If the instruction hijacked the agent's goal, the agent could attempt an unauthorized case dismissal without a proper human checkpoint or a reliable audit trail.
+
+The main issue was excessive agency: the agent had more authority than it needed for its normal support role. The exercise maps to OWASP Agentic Top 10 risks ASI01 (Agent Goal Hijack), ASI02 (Tool Misuse & Exploitation), and ASI03 (Identity & Privilege Abuse).
+
+Method:
+
+I inspected the LegalBot configuration and the Level 5 scenario, then examined how an instruction embedded in a citizen comment could influence the agent's goal and reach a sensitive tool action. I documented the risks using the MAESTRO threat model and mapped the governance requirements to the four NIST AI RMF functions: Govern, Map, Measure, and Manage.
+
+For remediation, I changed the lab's security status to PATCHED, removed standing dismissal authority, required human approval for requested case dispositions, enabled sanitization of citizen input as untrusted data, and enabled action logging. The key control is Least Agency: even if an untrusted instruction reaches the agent, it should not have the authority to finalize the case on its own. I also updated the Level 5 MAESTRO and NIST AI RMF tables and prepared a technical findings report. Test and scanner results should be treated as verified only where supporting evidence is available.
+
+Evidence:
+
+Key Level 5 commits:
+Patch Level 5 governance controls and set status to PATCHED
+Complete the NIST AI RMF mapping
+Fill the MAESTRO threat model table
+Outcome:
+
+I documented the Level 5 agent-governance risk and updated the lab to demonstrate a safer design. The agent no longer has standing dismissal authority in the hardened configuration; requested case dispositions are routed for human review, citizen comments are handled as untrusted data, and action logging is enabled. The MAESTRO and NIST AI RMF mappings explain the technical risks and the governance actions needed to manage them.
+
+The main lesson is that input sanitization and guardrails are useful layers, but they cannot replace authorization boundaries. Removing unnecessary standing authority and requiring human approval for sensitive actions reduces the chance that a goal hijack becomes an irreversible action.
+
+Skills: Excessive Agency Mitigation · Llama Guard Integration · Pydantic Schema Enforcement · Autonomous Agent Containment
+
+Others:
+
+Level 5 Agent Governance Findings Report: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/agent-governance-findings-report.md
+Autonomous Agent Risk Matrix: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-12/Autonomous_Agent_Risk_Matrix.pdf
+Level 5 MAESTRO Threat Model: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/level-5-maestro-threat-model.md
+Level 5 NIST AI RMF Mapping: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/nist-ai-rmf-mapping.md
+LinkedIn post link: https://lnkd.in/p/dPT753me
