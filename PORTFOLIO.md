@@ -1,13 +1,13 @@
-AI Defense Lab — Portfolio
+#  AI Defense Lab — Portfolio
 
-Student: Abati Moses Oluwaseyi 
-GitHub: XMoxez
-Hugging Face Space: [Insert Hugging Face Space link]
-Completed: 21 October 2026
+### Student: Abati Moses Oluwaseyi 
+### GitHub: XMoxez
+### Hugging Face Space: [Insert Hugging Face Space link]
+### Completed: 21 October 2026
 
 ---
 
-Level 1 — MedVitals AI: Cloud Infrastructure Security
+## Level 1 — MedVitals AI: Cloud Infrastructure Security
 
 1. Scenario / Investigation
 
@@ -56,7 +56,7 @@ The assessment and permission changes strengthened the approach to controlling a
 
 ---
 
-Level 2 — DataForge ML: AI Model Security
+## Level 2 — DataForge ML: AI Model Security
 
 1. Scenario / Investigation
 
@@ -105,7 +105,7 @@ This investigation strengthened my understanding of how model files can become a
 
 ---
 
-Level 3 — CartBot AI: Application & API Security
+## Level 3 — CartBot AI: Application & API Security
 
 1. Scenario / Investigation
 
@@ -165,7 +165,8 @@ Portfolio File: [Insert direct PORTFOLIO.md link]
 Combined Levels 1–3 LinkedIn Case Study: [Insert published LinkedIn post link]
 
 https://lnkd.in/p/eADZ3qFg
-Level 4 — PayGuard · Data Security in AI
+
+## Level 4 — PayGuard · Data Security in AI
 Problem:
 
 PayGuard's RAG system had weaknesses around tenant isolation, vector-store access, embedding exposure, fine-tuning data integrity, and query control. The RAG layer trusted the client-supplied tenant_id, the vector store used a shared index without enforced tenant filtering, the fine-tuning pipeline accepted training data without integrity validation, and retrieval had no effective rate limit.
@@ -182,10 +183,9 @@ For remediation, I moved tenant enforcement to the database/vector-store layer, 
 
 Evidence:
 
-Level 4 remediation commit: https://github.com/Ikankeabasi/ai-security-defense-lab/commit/f141340cb548ab9d1d21ce2b536094d84fa5366a
-Level 4 STRIDE findings: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-11/week-11-level-4-data-security-findings.md
-Level 4 lab: https://github.com/Ikankeabasi/ai-security-defense-lab/blob/main/levels/level4_payguard.py
-Outcome:
+Level 4 remediation commit: https://github.
+Level 4 STRIDE findings: https://github.
+Level 4 lab: https://github.
 
 Cross-tenant retrieval is no longer possible at the application layer or the database layer — even a future code change that forgets to check tenant_id cannot bypass the database-level tenant boundary.
 
@@ -197,8 +197,8 @@ RAG Security · Vector Database Access Control · OWASP LLM Top 10 (LLM09, LLM05
 
 Others:
 
-Level 4 Technical Report link: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-11/week-11-level-4-data-security-report.md
-LinkedIn post link: https://lnkd.in/p/dQsXSjmJ
+Level 4 Technical Report link: https://
+LinkedIn post link: https://
 Level 5 — LegalBot Municipal · Agentic AI Security
 Problem:
 
@@ -228,8 +228,8 @@ Skills: Excessive Agency Mitigation · Llama Guard Integration · Pydantic Schem
 
 Others:
 
-Level 5 Agent Governance Findings Report: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/agent-governance-findings-report.md
-Autonomous Agent Risk Matrix: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-12/Autonomous_Agent_Risk_Matrix.pdf
-Level 5 MAESTRO Threat Model: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/level-5-maestro-threat-model.md
-Level 5 NIST AI RMF Mapping: https://github.com/Ikankeabasi/hernetiq-fellowship-portfolio./blob/main/week-13/nist-ai-rmf-mapping.md
+Level 5 Agent Governance Findings Report: https://github.com/
+Autonomous Agent Risk Matrix: https://github.com/
+Level 5 MAESTRO Threat Model: https://github.com/
+Level 5 NIST AI RMF Mapping: https://github.com/
 LinkedIn post link: https://lnkd.in/p/dPT753me
