@@ -150,18 +150,17 @@ The investigation demonstrated why API authorization must be enforced at the ser
 
 Portfolio Repository
 
-AI Defense Lab Repository: [Insert repository link]
+AI Defense Lab Repository: https://github.com/XMoxez/ai-security-defense-lab
 
-Portfolio File: [Insert direct PORTFOLIO.md link]
+Portfolio File: https://github.com/XMoxez/ai-security-defense-lab/blob/main/PORTFOLIO.md
 
-Combined Levels 1–3 LinkedIn Case Study: [Insert published LinkedIn post link]
-
+Combined Levels 1–3 LinkedIn Case Study:
 https://lnkd.in/p/eADZ3qFg
 
 ## Level 4 — PayGuard · Data Security in AI
  Problem:
 
-PayGuard's RAG system had weaknesses around tenant isolation, vector-store access, embedding exposure, fine-tuning data integrity, and query control. The RAG layer trusted the client-supplied tenant_id, the vector store used a shared index without enforced tenant filtering, the fine-tuning pipeline accepted training data without integrity validation, and retrieval had no effective rate limit.
+The PayGuard's RAG system had weaknesses around tenant isolation, vector-store access, embedding exposure, fine-tuning data integrity, and query control. The RAG layer trusted the client-supplied tenant_id, the vector store used a shared index without enforced tenant filtering, the fine-tuning pipeline accepted training data without integrity validation, and retrieval had no effective rate limit.
 
 I also assessed the security impact of embedding inversion and the fine-tuning backdoor demonstrated in the lab. These weaknesses created a path to cross-tenant data exposure, poisoned model behaviour, and increased inference/resource costs.
 
@@ -174,10 +173,7 @@ I then inspected the Airflow fine-tuning pipeline, triggered the poisoned model 
 For remediation, I moved tenant enforcement to the database/vector-store layer, strengthened fine-tuning data validation, protected the retrieval boundary, and verified the security changes against the Level 4 requirements.
 
  Evidence:
-
-Level 4 remediation commit: https://github.
-Level 4 STRIDE findings: https://github.
-Level 4 lab: https://github.
+Level 4 lab: https://github.com/XMoxez/Herneriq-fellowship-portfolio/tree/main/Week-4
 
 Cross-tenant retrieval is no longer possible at the application layer or the database layer — even a future code change that forgets to check tenant_id cannot bypass the database-level tenant boundary.
 
@@ -201,12 +197,13 @@ I inspected the LegalBot configuration and the Level 5 scenario, then examined h
 
 For remediation, I changed the lab's security status to PATCHED, removed standing dismissal authority, required human approval for requested case dispositions, enabled sanitization of citizen input as untrusted data, and enabled action logging. The key control is Least Agency: even if an untrusted instruction reaches the agent, it should not have the authority to finalize the case on its own. I also updated the Level 5 MAESTRO and NIST AI RMF tables and prepared a technical findings report. Test and scanner results should be treated as verified only where supporting evidence is available.
 
- Evidence:
+ Evidence: https://github.com/XMoxez/Herneriq-fellowship-portfolio/tree/main/Week-5
 
 Key Level 5 commits:
 Patch Level 5 governance controls and set status to PATCHED
 Complete the NIST AI RMF mapping
 Fill the MAESTRO threat model table
+
 Outcome:
 
 I documented the Level 5 agent-governance risk and updated the lab to demonstrate a safer design. The agent no longer has standing dismissal authority in the hardened configuration; requested case dispositions are routed for human review, citizen comments are handled as untrusted data, and action logging is enabled. The MAESTRO and NIST AI RMF mappings explain the technical risks and the governance actions needed to manage them.
