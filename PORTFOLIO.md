@@ -2,7 +2,7 @@
 
 ### Student: Abati Moses Oluwaseyi 
 ### GitHub: XMoxez
-### Hugging Face Space: [[Insert Hugging Face Space link](https://huggingface.co/moxez)]
+### Hugging Face Space: [(https://huggingface.co/moxez)]
 ### Completed: 21 October 2026
 
 ---
