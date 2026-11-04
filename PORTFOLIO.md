@@ -19,13 +19,12 @@ I identified weaknesses in the AWS IAM policy, particularly permissions that wer
 
 3. Evidence
 
-- IAM policy assessment and permission review: [Insert evidence link]
-- Supporting screenshots or relevant configuration evidence: [Insert screenshot or file link]
-- Relevant GitHub code and changes: [Insert link if separate from the commit below]
+- IAM policy assessment and permission review: https://github.com/XMoxez/Herneriq-fellowship-portfolio/tree/main/Week-1
+- Supporting screenshots or relevant configuration evidence: https://github.com/XMoxez/Herneriq-fellowship-portfolio/blob/main/Week-1/1784441844787.jpeg
 
 4. Remediation
 
-I worked on refining the IAM permissions to follow the principle of least privilege. This involved separating S3 bucket-level permissions from object-level permissions and reviewing the resource scopes for the required S3 and RDS actions. The objective was to ensure that the application could access only the resources necessary for its intended functions.
+I addressed the refining IAM permissions to follow the principle of least privilege. This involved separating S3 bucket-level permissions from object-level permissions and reviewing the resource scopes for the required S3 and RDS actions. The objective was to ensure that the application could access only the resources necessary for its intended functions.
 
 5. Commit
 
@@ -45,14 +44,13 @@ The assessment and permission changes strengthened the approach to controlling a
 - Security Configuration Review
 
 8. Supporting Artifacts
+- Supporting screenshots or architecture diagram: https://github.com/XMoxez/Herneriq-fellowship-portfolio/blob/main/Week-1/1784441844787.jpeg
 
-- Technical documentation: [Insert link]
-- Supporting screenshots or architecture diagram: [Insert link]
-- Lab walkthrough: [Insert link, if available]
 
-9. LinkedIn Case Study
+9. LinkedIn Case Studyhttps://lnkd.in/p/ev7bWrHA
 
 [Insert Level 1 LinkedIn post link or combined Levels 1–3 case study link]
+https://lnkd.in/p/eskdh5gU
 
 ---
 
@@ -60,7 +58,7 @@ The assessment and permission changes strengthened the approach to controlling a
 
 1. Scenario / Investigation
 
-DataForge ML is a simulated machine-learning environment used to examine security risks affecting AI models and their development pipeline. My investigation focused on how models were obtained, stored, and loaded, particularly the risks associated with untrusted model sources and unsafe serialization formats.
+I accessed the DataForge ML, a simulated machine-learning environment used to examine security risks affecting AI models and their development pipeline. My investigation focused on how models were obtained, stored, and loaded, particularly the risks associated with untrusted model sources and unsafe serialization formats.
 
 2. Problem / Vulnerability
 
@@ -68,9 +66,7 @@ The main security concern was the possibility of malicious or tampered model fil
 
 3. Evidence
 
-- Model security assessment and scanning evidence: [Insert evidence link]
-- Picklescan results or relevant screenshots: [Insert screenshot or file link]
-- Supporting model source or configuration evidence: [Insert link, if available]
+- Supporting model source or configuration evidence: https://github.com/XMoxez/Herneriq-fellowship-portfolio/tree/main/Week-2
 
 4. Remediation
 
@@ -95,11 +91,10 @@ This investigation strengthened my understanding of how model files can become a
 
 8. Supporting Artifacts
 
-- Model security assessment: [Insert technical write-up link]
-- Picklescan output or screenshots: [Insert link]
-- Supporting documentation or walkthrough: [Insert link, if available]
+- Supporting documentation or walkthrough: https://github.com/XMoxez/Herneriq-fellowship-portfolio/blob/main/Week-2/Defensive-Python-Code-Review.md
 
-9. LinkedIn Case Study
+9. LinkedIn:
+   https://lnkd.in/p/eCKFR3z2
 
 [Insert Level 2 LinkedIn post link or combined Levels 1–3 case study link]
 
@@ -109,7 +104,7 @@ This investigation strengthened my understanding of how model files can become a
 
 1. Scenario / Investigation
 
-CartBot AI is a simulated AI-powered shopping application. My investigation focused on its API security, especially how the application authenticated users and controlled access to shopping carts and customer order information. I examined how API requests were handled and whether the server properly verified a user's authority before allowing access to sensitive records.
+The CartBot AI is a simulated AI-powered shopping application. My investigation focused on its API security, especially how the application authenticated users and controlled access to shopping carts and customer order information. I examined how API requests were handled and whether the server properly verified a user's authority before allowing access to sensitive records.
 
 2. Problem / Vulnerability
 
@@ -117,9 +112,8 @@ I identified a Broken Object-Level Authorization (BOLA) risk. The application's 
 
 3. Evidence
 
-- API authorization assessment: [Insert evidence link]
-- Relevant screenshots showing the vulnerability or test results: [Insert screenshot or file link]
-- Supporting API request or response evidence: [Insert link, if available]
+- Relevant screenshots showing the vulnerability or test results: https://github.com/XMoxez/Herneriq-fellowship-portfolio/blob/main/Week-3/Medvitals-Hardened-IAM-Policy.json
+- Supporting API request or response evidence: https://github.com/XMoxez/Herneriq-fellowship-portfolio/blob/main/Week-3/week-3-iam-framework.md
 
 4. Remediation
 
@@ -146,12 +140,10 @@ The investigation demonstrated why API authorization must be enforced at the ser
 
 8. Supporting Artifacts
 
-- API security technical write-up: [Insert link]
-- Screenshots or API testing evidence: [Insert link]
-- Lab walkthrough or supporting documentation: [Insert link, if available]
+- API security technical write-up: https://github.com/XMoxez/Herneriq-fellowship-portfolio/tree/main/Week-3
 
 9. LinkedIn Case Study
-
+   https://lnkd.in/p/eeWficJB
 [Insert Level 3 LinkedIn post link or combined Levels 1–3 case study link]
 
 ---
