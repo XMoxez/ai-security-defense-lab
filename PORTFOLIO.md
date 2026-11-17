@@ -2,7 +2,7 @@
 
 ### Student: Abati Moses Oluwaseyi 
 ### GitHub: XMoxez
-### Hugging Face Space: [(https://huggingface.co/moxez)]
+### Hugging Face Space: [(https://ai-security-defense-lab-moxez.streamlit.app/#nist-ai-rmf-governance-mapping)]
 ### Completed: 21 October 2026
 
 ---
